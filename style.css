@@ -1,0 +1,198 @@
+@font-face {
+  font-family: Heavitas;
+  src: url(ttf/Heavitas.ttf);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  --primary-clr-900: #121212;
+  --primary-clr-700: #1f1f1f;
+  --primary-clr-500: #878787;
+  --primary-clr-300: #5b5b5b;
+  --primary-clr-100: #dfdfdf;
+
+  --accent-clr-100: #e53655;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--primary-clr-900);
+
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  margin: 1.5em 0 0.5em;
+  color: var(--primary-clr-100);
+
+  font-family: Heavitas, sans-serif;
+  letter-spacing: 0.1em;
+}
+
+main {
+  flex: 1;
+  max-width: 1500px;
+  width: 90%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main > * {
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.players-scoreboard {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  color: var(--primary-clr-100);
+}
+
+.player-one {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.player-two {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.player-name {
+  margin-bottom: 0.3em;
+}
+
+.player-name-edit:hover {
+  color: var(--primary-clr-100);
+}
+
+.player-items {
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-clr-700);
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding-block: 0.5em;
+  font-family: Heavitas, sans-serif;
+
+  margin-bottom: 1em;
+}
+
+.player-item:first-child {
+  border-right: 2px solid var(--primary-clr-300);
+}
+
+.player-item {
+  padding: 0 2.5em;
+}
+
+.game-output {
+  margin-block: 1em;
+  color: var(--primary-clr-100);
+  font-family: Poppins, sans-serif;
+}
+
+.game-board-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  font-family: Heavitas, sans-serif;
+  font-size: 4.5rem;
+  border: 1px solid var(--primary-clr-300);
+  color: var(--primary-clr-100);
+  background-color: var(--primary-clr-700);
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+
+  border: 1px solid var(--primary-clr-300);
+  margin: -1px 0 0 -1px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box:hover {
+  background-color: #1b1b1b;
+}
+
+.reset-btn {
+  width: 8em;
+  padding-block: 0.5em;
+  margin: 1em auto;
+  border-radius: 10px;
+  border: none;
+  font-family: Heavitas, sans-serif;
+  font-size: 1.2rem;
+  background-color: var(--accent-clr-100);
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  opacity: 0.7;
+}
+
+.footer {
+  color: var(--primary-clr-100);
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+@media screen and (max-width: 750px) {
+  .players-scoreboard {
+    flex-direction: column;
+  }
+
+  .player-one,
+  .player-two {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .box {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .box {
+    width: 80px;
+    height: 80px;
+  }
+}
